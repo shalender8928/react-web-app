@@ -1,0 +1,42 @@
+{
+	"title":"Our Best Services",
+	"desc":"There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.",
+	"services":[
+		{
+			"1d":"1",
+			"iconClass":"lni-capsule",
+      		"title":"Refreshing Design",
+      		"desc":["Lorem ipsum dolor sit amet, adipscing elitr, sed diam nonumy eirmod tempor ividunt labor dolore magna.","sdfsdfsdffk hfsifhk"]
+		},
+		{
+			"1d":"2",
+			"iconClass":"lni-bootstrap",
+      		"title":"Solid Bootstrap 5",
+      		"desc":"Lorem ipsum dolor sit amet, adipscing elitr, sed diam nonumy eirmod tempor ividunt labor dolore magna."	
+      	},
+		{
+			"1d":"3",
+			"iconClass":"lni-shortcode",
+      		"title":"100+ Components",
+      		"desc":"Lorem ipsum dolor sit amet, adipscing elitr, sed diam nonumy eirmod tempor ividunt labor dolore magna."
+		},
+		{
+			"1d":"4",
+			"iconClass":"lni-dashboard",
+      		"title":"Speed Optimized",
+      		"desc":"Lorem ipsum dolor sit amet, adipscing elitr, sed diam nonumy eirmod tempor ividunt labor dolore magna."
+		},
+		{
+			"1d":"5",
+			"iconClass":"lni-layers",
+      		"title":"Fully Customizable",
+      		"desc":"Lorem ipsum dolor sit amet, adipscing elitr, sed diam nonumy eirmod tempor ividunt labor dolore magna."
+		},
+		{
+			"1d":"6",
+			"iconClass":"lni-reload",
+      		"title":"Regular Updates",
+      		"desc":"Lorem ipsum dolor sit amet, adipscing elitr, sed diam nonumy eirmod tempor ividunt labor dolore magna."
+		}
+	]
+}

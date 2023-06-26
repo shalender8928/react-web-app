@@ -1,0 +1,33 @@
+{
+	"title" : "Latest News & Blog",
+	"desc" : "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.",
+	"data" : [
+		{
+			"1d" : "1",
+			"thumbnail_url" : "assets/images/blog/1.jpg",
+	  		"author_img" : "assets/images/blog/b6.jpg",
+	  		"author" : "BY TIM NORTON",
+	  		"slug" : "#blog1",
+	  		"title" : "Make your team a Design driven company",
+	  		"content" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard."
+		},
+		{
+			"1d" : "2",
+			"thumbnail_url" : "assets/images/blog/2.jpg",
+	  		"author_img" : "assets/images/blog/b6.jpg",
+	  		"author" : "BY TIM NORTON",
+	  		"slug" : "#blog2",
+	  		"title" : "The newest web framework that changed the world",
+	  		"content" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard."
+		},
+		{
+			"1d" : "3",
+			"thumbnail_url" : "assets/images/blog/3.jpg",
+	  		"author_img" : "assets/images/blog/b6.jpg",
+	  		"author" : "BY TIM NORTON",
+	  		"slug" : "#blog3",
+	  		"title" : "5 ways to improve user retention for your startup",
+	  		"content" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard."
+		}
+	]
+}
