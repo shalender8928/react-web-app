@@ -1,0 +1,52 @@
+[
+	{
+		"id":"1",
+		"link": "#hero-area",
+		"label":"Home",
+		"auth":"0",
+		"target": "_self"
+	},
+	{
+		"id":"2",
+		"link": "#our-story",
+		"label":"Our Story",
+		"auth":"0",
+		"target": "_self"
+	},
+	{
+		"id":"3",
+		"link": "#services",
+		"label":"Services",
+		"auth":"0",
+		"target": "_self"
+	},
+	{
+		"id":"4",
+		"link": "#pricing",
+		"label":"Pricing",
+		"auth":"0",
+		"target": "_self"
+	},
+	{
+		"id":"5",
+		"link": "#blogs-news",
+		"label":"Blogs",
+		"auth":"0",
+		"target": "_self"
+	},
+	{
+		"id":"6",
+		"link": "#contact",
+		"label":"Contact",
+		"auth":"0",
+		"target": "_self"
+	},
+	{
+		"id":"7",
+		"link": "https://react.dev/reference/react",
+		"label":"React Docs",
+		"auth":"0",
+		"target": "_blank"
+	}
+
+]

@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import BlogListSingleNews from './PageComponents/BlogListSingleNews';
 
 const BlogNews = () => {
@@ -6,6 +6,8 @@ const BlogNews = () => {
 	const [data,setData] = useState([]);
 	// const posts_url = './jsonFiles/blogs.json';
 	const posts_url = 'http://localhost/lara945/public/api/v1/posts?limit=3';
+
+	const loggged = useRef(true);
 
 	const getData = () => {
 		fetch(posts_url,{
@@ -22,7 +24,10 @@ const BlogNews = () => {
 		});
 	}
 	useEffect(()=>{
-		getData();
+		if (loggged.current) {
+			loggged.current = false;
+			getData();
+		}
 	},[]);
 
 	if(data)
@@ -47,7 +52,7 @@ const BlogNews = () => {
 
 		
 		return (
-			<div id="blog" className="latest-news-area section">
+			<div id="blogs-news" className="latest-news-area section">
 			    <div className="section-title-five">
 			      <div className="container">
 			        <div className="row">

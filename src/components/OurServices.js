@@ -1,9 +1,10 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import ServicesListSingleService from './PageComponents/ServicesListSingleService';
 
 const OurServices = () => {
 
 	const [data,setData] = useState([]);
+	const loggged = useRef(true);
 
 	const getData = () => {
 		fetch('./jsonFiles/services.json',{
@@ -20,7 +21,10 @@ const OurServices = () => {
 		})
 	}
 	useEffect(()=>{
-		getData();
+		if (loggged.current) {
+			loggged.current = false;
+			getData();
+		}
 	},[]);
 
 	
