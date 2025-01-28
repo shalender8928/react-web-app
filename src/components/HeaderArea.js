@@ -2,7 +2,7 @@ import GLightbox from 'glightbox';
 
 const HeaderArea = () => {
   const lightbox = GLightbox({
-    'href': 'https://www.youtube.com/watch?v=r44RKWyfcFw',
+    'href': '//www.youtube.com/watch?v=r44RKWyfcFw',
     'type': 'video',
     'source': 'youtube', //vimeo, youtube or local
     'selector' : '.glightbox',
@@ -11,7 +11,23 @@ const HeaderArea = () => {
     // 'openEffect' :'zoom'
   });
   
-  lightbox.open();
+  lightbox.open(); 
+
+  /*const myGallery = GLightbox({
+      elements: [
+          
+          {
+              'href': 'https://www.youtube.com/watch?v=Ga6RYejo6Hk',
+              'type': 'video',
+              'source': 'youtube', //vimeo, youtube or local
+              'selector' : '.glightbox',
+              'width': 900,
+          }
+      ],
+      // autoplayVideos: true,
+  });
+  
+  myGallery.open();*/
 
   return(
     <section id="hero-area" className="header-area header-eight">

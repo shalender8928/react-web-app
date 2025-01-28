@@ -912,19 +912,31 @@ p {
 /*======================================
     header Area CSS
 ========================================*/
+
+.layout-header{
+  position: relative;
+  padding:94px 0 0px 0;
+/*  background: var(--primary);*/
+}
 .header-eight {
   position: relative;
-  padding:160px 0 100px 0;
+  padding:60px 0 100px 0;
   background: var(--primary);
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .header-eight {
-    padding: 130px 0 80px 0;
+    padding: 50px 0 80px 0;
+  }
+  .layout-header{
+    padding: 80px 0 80px 0;
   }
 }
 @media (max-width: 767px) {
   .header-eight {
-    padding: 100px 0 60px 0;
+    padding: 40px 0 60px 0;
+  }
+  .layout-header{
+    padding: 50px 0 60px 0;
   }
 }
 .header-eight .header-image img {
@@ -1963,4 +1975,9 @@ p {
     padding: 0;
     text-align: center;
     width: 34px;
+}
+
+.bg-primary
+{
+
 }

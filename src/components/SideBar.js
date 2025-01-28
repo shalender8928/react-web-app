@@ -19,6 +19,7 @@ const Sidebar = (props) => {
           <h5 className="menu-title">Quick Links</h5>
           <ul>
             <li><a href="#about-us">About Us</a></li>
+            <li><a href="/blogs">Blogs</a></li>
             <li><a href="#our-team">Our Team</a></li>
             <li><a href="#news">Latest News</a></li>
             <li><a href="#contact">Contact Us</a></li>

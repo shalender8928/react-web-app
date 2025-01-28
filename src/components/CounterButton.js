@@ -7,7 +7,7 @@ import DateAndTime from './DateAndTime';
 const CounterButton = () => {
 	
 	const [count , setCount] = useState(0);
-	const [isActive, setActive] = useState(true);
+	const [isActive, setActive] = useState(false);
 	const [Btntext, setBtntext] = useState('Stop');
 
 	const increment = (count) => {

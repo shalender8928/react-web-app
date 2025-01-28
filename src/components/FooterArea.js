@@ -1,4 +1,5 @@
 import BackToTop from './BackToTop';
+import {Link} from 'react-router-dom';
 
 const FooterArea = () => {
 	return(
@@ -29,6 +30,7 @@ const FooterArea = () => {
 		              <div className="footer-widget f-link">
 		                <h5>Solutions</h5>
 		                <ul>
+		               		<li><Link to="/login" > Login</Link></li>
 		                  <li><a href="#Marketing">Marketing</a></li>
 		                  <li><a href="#Analytics">Analytics</a></li>
 		                  <li><a href="#Commerce">Commerce</a></li>

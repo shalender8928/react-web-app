@@ -1,10 +1,18 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect,useRef, useCallback} from 'react';
 import SideBar from './SideBar';
+import { useNavigate } from 'react-router-dom';
+// import {default as Navbar1} from 'react-bootstrap/Navbar';
+import {Button,Nav} from 'react-bootstrap';
+import { useCookies } from 'react-cookie';
+import AuthProtected from '../util/AuthProtected';
+
 
 const Navbar = (props) => {
 
   const [isActive, setActive] = useState(false);
   const [mobmenu, setMobmenu] = useState(false);
+
+  const [cookies, , removeCookie] = useCookies();
 
   const toggleClass = () => {
     setActive(!isActive);
@@ -15,7 +23,7 @@ const Navbar = (props) => {
   };
 
 
-  useEffect(()=>{
+  /*useEffect(()=>{
     if (isActive) {
       // console.log('Active');
     }
@@ -23,7 +31,7 @@ const Navbar = (props) => {
     {
       // console.log('In Active');
     }
-  },[isActive]);
+  },[isActive]);*/
 
   window.onscroll = function () {
       var header_navbar = document.querySelector(".navbar-area");
@@ -44,9 +52,87 @@ const Navbar = (props) => {
       }
   };
 
+  const navigate = useNavigate();
+  const logout = useCallback(() => {
+    if (cookies.token) {
+      removeCookie('token',{samesite:'Lax'});
+      window.location.reload()
+      navigate('/login');
+    }
+  },[cookies.token,navigate,removeCookie])
+
+  const [data,setData] = useState([]);
+  // const [navItemsmenu,setNavItemsmenu] = useState([]);
+  let [navItems,setNavItems] = useState([]);
+  const loggged = useRef(true);
+
+  const  getData = () => {
+    fetch('./jsonFiles/headermenu.json',{
+      headers:{
+        'Content-Type' : 'application/json',
+        'Accept' : 'application/json'
+      }
+    })
+    .then((res)=>{
+      return res.json();
+    })
+    .then((resp)=>{
+    // console.log('get json',resp);
+      setData(resp);
+    })
+  }
+
+  
+  useEffect(()=>{
+    if(navItems.length === 0)
+    {
+        if (loggged.current) {
+          loggged.current = false;
+          getData();
+        }
+        if(data)
+        {
+          // console.log(data)
+          const navItems1 = (data) ? data.map((item,indx)=>   {
+            if(item.auth === 1)
+           {
+          return(
+                <AuthProtected>
+                  <li className="nav-item flex items-center justify-center m-auto">
+                    <Button className="btn-warning" onClick={logout}>Logout</Button>
+                  </li>
+                </AuthProtected>
+                );
+            }
+            else
+            {
+              return (
+                  <Nav.Item as="li" key={item.id}>
+                    <Nav.Link eventKey={`link-${item.id}`} className="page-scroll" href={item.link} target={item.target}>{item.label}</Nav.Link>
+                  </Nav.Item>
+              );
+
+            }
+          }) : null;
+
+          setNavItems(navItems1);
+      }
+    }
+    else
+    {
+        if (loggged.current) {
+          loggged.current = false;
+          console.log('navItems',navItems);
+        }
+    }
+  },[navItems,data,logout]);
+
+  // console.log('dataaa',data)
+  // console.log('navItems',navItems)
+
   return (
 
-      <section className="navbar-area navbar-nine">
+      <section className="navbar-area navbar-nine" target="">
         <div className="container">
           <div className="row">
             <div className="col-lg-12">
@@ -63,9 +149,14 @@ const Navbar = (props) => {
 
                 <div className="collapse navbar-collapse sub-menu-bar" id="navbarNine">
                   <ul className="navbar-nav me-auto">
-                    <li className="nav-item">
+                    {/*<li className="nav-item">
                       <a className="page-scroll active" href="#hero-area">Home</a>
                     </li>
+
+                    <li className="nav-item">
+                      <a className="page-scroll" href="#our-story">Our Story</a>
+                    </li>
+
                     <li className="nav-item">
                       <a className="page-scroll" href="#services">Services</a>
                     </li>
@@ -73,12 +164,27 @@ const Navbar = (props) => {
                     <li className="nav-item">
                       <a className="page-scroll" href="#pricing">Pricing</a>
                     </li>
+
                     <li className="nav-item">
-                      <a className="page-scroll" href="#contact">Contact</a>
+                      <a className="page-scroll" href="#blogs-news">Blogs</a>
                     </li>
+
                     <li className="nav-item">
                       <a className="page-scroll" href={props.link}>{props.title}</a>
                     </li>
+                    
+                    <li className="nav-item">
+                      <a className="page-scroll" href="#contact">Contact</a>
+                    </li>*/}
+
+                      {(navItems) ? navItems : ''}
+
+                    <AuthProtected>
+                      <li className="nav-item flex items-center justify-center m-auto">
+                        <Button className="btn-warning" onClick={logout}>Logout</Button>
+                      </li>
+                    </AuthProtected>
+
                   </ul>
                 </div>
 
