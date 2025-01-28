@@ -4,8 +4,8 @@ import BlogListSingleNews from './PageComponents/BlogListSingleNews';
 const BlogNews = () => {
 
 	const [data,setData] = useState([]);
-	// const posts_url = './jsonFiles/blogs.json';
-	const posts_url = 'http://localhost/lara945/public/api/v1/posts?limit=3';
+	const posts_url = './jsonFiles/blogs.json';
+	// const posts_url = 'http://localhost/lara945/public/api/v1/posts?limit=3';
 
 	const loggged = useRef(true);
 
